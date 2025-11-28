@@ -6,47 +6,47 @@
 #define AOUT_PIN1 36 // ESP32 pin GPIO36 (ADC0) that connects to AOUT pin of moisture sensor
 #define AOUT_PIN2 34 // ESP32 pin GPIO34 (ADC0) that connects to AOUT pin of moisture sensor
 
-// the soil will return 3600 when dry, 2000 when it's wet
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class MyClass { 
+  public:             
+    int myNum;
+
+    bool active_pump(int myNum, int PIN_RELAY) {
+      if (myNum < 2200) {
+        digitalWrite(PIN_RELAY, HIGH); // turn pump ON
+        delay(1000);
+        return true;
+      } 
+      else {
+        digitalWrite(PIN_RELAY, LOW); // turn pump OFF
+        return false;
+      }
+    }
+};
+
 void setup() {
   Serial.begin(9600);
 
   // initialize digital pin as an output.
   pinMode(PIN_RELAY_1, OUTPUT);
   pinMode(PIN_RELAY_2, OUTPUT);
-
+  
 }
 
 
 void loop() {
+  MyClass myObj1;
+  MyClass myObj2;
 
-// these should be wrapped into a function, having code like this is not great
-// classes aren't neeeded but I will think about maybe writing one if time permits
+  int value1 = analogRead(AOUT_PIN1);
+  int value2 = analogRead(AOUT_PIN2);
+  myObj1.myNum = value1;
+  myObj2.myNum = value2;
 
-  int value1 = analogRead(AOUT_PIN1); // read the analog value from sensor
-  Serial.print("Sensor 1, Moisture value: ");
-  Serial.println(value1);
-  
-  if (value1 < 2200){
-  Serial.println("Turn on all");
-  digitalWrite(PIN_RELAY_1, HIGH);
-  delay(1000);
-  }else{
-  Serial.println("Turn off all");
-  digitalWrite(PIN_RELAY_1, LOW);
-  }
-
-
-// class/function
-  int value2 = analogRead(AOUT_PIN2); // read the analog value from sensor
-  Serial.print("Sensor 2, Moisture value: ");
-  Serial.println(value1);
-  
-  if (value2 < 2200){
-  Serial.println("Turn on all");
-  digitalWrite(PIN_RELAY_2, HIGH);
-  delay(1000);
-  }else{
-  Serial.println("Turn off all");
-  digitalWrite(PIN_RELAY_2, LOW);
-  }
- }
+  bool pumpState1 = myObj1.active_pump(value1, PIN_RELAY_1); // call function
+  bool pumpState2 = myObj2.active_pump(value2, PIN_RELAY_2); // call function
+}
