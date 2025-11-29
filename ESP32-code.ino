@@ -1,24 +1,23 @@
-#define PIN_RELAY_1  16 // The ESP32 pin GPIO16 connected to the IN1 pin of relay module
-#define PIN_RELAY_2  17 // The ESP32 pin GPIO17 connected to the IN2 pin of relay module
-// Unused relay, can be turned on if needed
-#define PIN_RELAY_3  18 // The ESP32 pin GPIO18 connected to the IN3 pin of relay module
-#define PIN_RELAY_4  19 // The ESP32 pin GPIO19 connected to the IN4 pin of relay module
-#define AOUT_PIN1 36 // ESP32 pin GPIO36 (ADC0) that connects to AOUT pin of moisture sensor
-#define AOUT_PIN2 34 // ESP32 pin GPIO34 (ADC0) that connects to AOUT pin of moisture sensor
+const int PIN_RELAY_1 = 16;
+const int PIN_RELAY_2 = 17;
+const int PIN_RELAY_3 = 18;
+const int PIN_RELAY_4 = 19;
+const int AOUT_PIN1   = 36;
+const int AOUT_PIN2   = 34;
+
+const int MOISTURE_THRESHOLD = 2200; //2200 is dry soil about 39% wet (3600/36)
+const int WATERING_TIME = 1000; // Measured in milliseconds
 
 
-#include <iostream>
-#include <string>
-using namespace std;
-
-class MyClass { 
+class PlantZone { 
   public:             
-    int myNum;
+    int Moisture_Value;
+    int PIN_RELAY;
 
     bool active_pump(int myNum, int PIN_RELAY) {
-      if (myNum < 2200) {
+      if (Moisture_Value < MOISTURE_THRESHOLD) {
         digitalWrite(PIN_RELAY, HIGH); // turn pump ON
-        delay(1000);
+        delay(WATERING_TIME); // you have to give it a delay or else it goes crazy
         return true;
       } 
       else {
@@ -39,14 +38,15 @@ void setup() {
 
 
 void loop() {
-  MyClass myObj1;
-  MyClass myObj2;
+  PlantZone myPlant1;
+  PlantZone myPlant2;
 
   int value1 = analogRead(AOUT_PIN1);
   int value2 = analogRead(AOUT_PIN2);
-  myObj1.myNum = value1;
-  myObj2.myNum = value2;
+  myPlant1.Moisture_Value = value1;
+  myPlant2.Moisture_Value = value2;
 
-  bool pumpState1 = myObj1.active_pump(value1, PIN_RELAY_1); // call function
-  bool pumpState2 = myObj2.active_pump(value2, PIN_RELAY_2); // call function
+  bool pumpState1 = myPlant1.active_pump(value1, PIN_RELAY_1); // call function
+  bool pumpState2 = myPlant2.active_pump(value2, PIN_RELAY_2); // call function
 }
+
