@@ -1,6 +1,8 @@
 # KU-IEEE-Irrigation-project
 This is the place where we will post/edit the code for our IEEE project,the code should be written in Arduino IDE version 2.3.6, Using ESP-32 plugin from Espressif 3.3.2. We received funding from KU IEEE to build this project to present it at KU Engineering Expo.
 
+Major thanks to: Noah Hickman and Joe Lieber for helping me make the project come to life
+
 # Meetings
 Thursdays from 5:00PM - 6PM LEEP 132X
 
