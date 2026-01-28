@@ -2,7 +2,7 @@ const int PIN_RELAY_1 = 16;
 const int PIN_RELAY_2 = 17;
 const int PIN_RELAY_3 = 18;
 const int PIN_RELAY_4 = 19;
-const int AOUT_PIN1   = 36;
+const int AOUT_PIN1   = 35;
 const int AOUT_PIN2   = 34;
 
 const int MOISTURE_THRESHOLD = 2200; //2200 is dry soil about 39% wet (3600/36)
