@@ -36,4 +36,5 @@ Despite these extra steps, the Freenove board offers key advantages. Its screw-t
 **CAD files for the enclosure will be added to this repository**, allowing for the stacked design.
 
 
-![Image(2)](https://github.com/user-attachments/assets/34ddca8d-798a-429d-818a-bd88310a9515)
+
+[Untitled 36.pdf](https://github.com/user-attachments/files/25456233/Untitled.36.pdf)
