@@ -33,4 +33,7 @@ On **Linux (Fedora 42)**, you may need to grant USB device permissions (sudo or 
 
 Despite these extra steps, the Freenove board offers key advantages. Its screw-terminal connections allow Dupont wires to be securely fastened, making the project more reliable and suitable for long-term use. This design choice also enables us to create a proper enclosure rather than relying on a breadboard, reducing the risk of loose connections.
 
-As the project nears completion, **CAD files for the enclosure will be added to this repository**.
+**CAD files for the enclosure will be added to this repository**, allowing for the stacked design.
+
+
+![Image(2)](https://github.com/user-attachments/assets/34ddca8d-798a-429d-818a-bd88310a9515)
