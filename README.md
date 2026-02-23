@@ -1,6 +1,6 @@
 # KU-IEEE Irrigation Project
 
-This repository contains the source code and documentation for the KU IEEE Irrigation Project. We used an**Arduino IDE v2.3.6** with the **Espressif ESP32 plugin v3.3.2**.
+This repository contains the source code and documentation for the KU IEEE Irrigation Project. **Arduino IDE v2.3.6** with the **Espressif ESP32 plugin v3.3.2**.
 
 This project was selected as **1 of 5 projects** from a pool of **25 proposals**, fundded by **KU IEEE**.
 
