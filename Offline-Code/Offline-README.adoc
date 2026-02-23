@@ -2,7 +2,7 @@
 Eric Chen
 02/22/2026
 
-== Step 3: Load the Code
+== Load the Code
 
 Copy and paste the ESP32 code into your Arduino IDE or Arduino Cloud Editor. 
 
