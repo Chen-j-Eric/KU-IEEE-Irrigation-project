@@ -1,0 +1,12 @@
+= IEEE Irrigation Project
+Eric Chen
+02/22/2026
+
+== Step 3: Load the Code
+
+Copy and paste the ESP32 code into your Arduino IDE or Arduino Cloud Editor. 
+
+In the "Additional Board Manager URLs" field, add the following URL:
+https://espressif.github.io/arduino-esp32/package_esp32_index.jsonIf you have other URLs in the field, separate them with a comma. 
+Click OK to save the preferences.
+
