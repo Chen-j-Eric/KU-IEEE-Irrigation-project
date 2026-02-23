@@ -1,0 +1,51 @@
+= IEEE Irrigation Project
+Eric Chen
+02/22/2026
+:revnumber: 1.0
+:license: GPL-3.0
+:toc:
+:toclevels: 2
+
+== Step 1: Installation
+
+. Create an account at https://cloud.arduino.cc/
+. Connect your ESP32 using the official guide:
+  https://docs.arduino.cc/arduino-cloud/guides/esp32/
+. Create your variables:
+  https://docs.arduino.cc/arduino-cloud/cloud-interface/variables/
+. Set up your dashboard:
+  https://docs.arduino.cc/arduino-cloud/cloud-interface/dashboard-widgets/
+
+NOTE:  
+If you are having issues, it is likely that your dashboard variables do not match the ones in the code.  
+Replace them with the ones you have created, or rename them to match the code exactly.
+
+=== Required Function Names (Case Sensitive)
+
+----
+void onWaterOn1Change();
+void onWaterOn2Change();
+----
+
+=== Required Variable Names (Case Sensitive)
+
+----
+int soil_Dryness_1;
+int soil_Dryness_2;
+bool float_Sensor;
+bool water_On_1;
+bool water_On_2;
+----
+
+== Step 2: Assemble the Circuit
+
+Circuit images are available on the project GitHub repository.  
+Follow the defined pin mappings labeled on the ESP32.
+
+== Step 3: Load the Code
+
+Copy and paste the ESP32 code into your Arduino IDE or Arduino Cloud Editor.
+
+== License
+
+This project is released under the GPL-3.0 License.
