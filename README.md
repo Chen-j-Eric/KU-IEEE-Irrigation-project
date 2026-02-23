@@ -23,4 +23,6 @@ KU LEEP 132X
 
 
 2D Wiring Diagram 
-![Image(2)](https://github.com/user-attachments/assets/10099302-a194-43c2-85e4-aaab106bb751)
+
+![Picture](https://github.com/user-attachments/assets/c5ec4b90-27ca-404f-9614-024885541868)
+[Untitled 36-1.pdf](https://github.com/user-attachments/files/25474996/Untitled.36-1.pdf)
